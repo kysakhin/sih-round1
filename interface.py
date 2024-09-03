@@ -15,16 +15,16 @@ question = st.text_input(
     disabled =not uploaded_file or not API_key
 )
 
-models = [
-        ("google/flan-t5-large", "High performance"),
-        ("google/flan-t5-base", "Balanced"),
-        ("google/flan-t5-small", "Lightweight")
-        ]
-
-formatted_options = [f"{model} - {comment}" for model, comment in models]
+# models = [
+#         ("google/flan-t5-large", "High performance"),
+#         ("google/flan-t5-base", "Balanced"),
+#         ("google/flan-t5-small", "Lightweight")
+#         ]
+#
+# formatted_options = [f"{model} - {comment}" for model, comment in models]
 
 option = st.selectbox("Choose what model to use? ",
-                      formatted_options
+                      ["google/flan-t5-large - High performance", "google/flan-t5-base - Balanced", "google/flan-t5-small - Lightweight"]
                       )
 
 def load_data(path, nrows):
