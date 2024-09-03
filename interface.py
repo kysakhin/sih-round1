@@ -15,6 +15,8 @@ question = st.text_input(
     disabled =not uploaded_file or not API_key
 )
 
+os.environ['HUGGINGFACEHUB_API_TOKEN'] = API_key
+
 # models = [
 #         ("google/flan-t5-large", "High performance"),
 #         ("google/flan-t5-base", "Balanced"),
